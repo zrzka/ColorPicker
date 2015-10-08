@@ -12,11 +12,15 @@ class PickerViewController: UIViewController {
   @IBOutlet var pickerPlaceholder: UIView!
   @IBOutlet var selectedColorView: UIView!
   @IBOutlet var selectedColorLabel: UILabel!
+  @IBOutlet var forceTouchActiveLabel: UILabel!
 
   let pickerView = ColorPicker()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    selectedColorLabel.text = nil
+    forceTouchActiveLabel.alpha = 0.0
     
     selectedColorView.layer.borderColor = UIColor.blackColor().CGColor
     selectedColorView.layer.borderWidth = 1.0
@@ -39,9 +43,11 @@ class PickerViewController: UIViewController {
         let b = Int(brightness * 100)
         
         self?.selectedColorLabel.text = "HSB \(h)° \(s)% \(b)%"
+        self?.forceTouchActiveLabel.alpha = 1.0 - brightness
       }
       
     }
+    pickerView.didChangeColor?(pickerView.color)
   }
 }
 

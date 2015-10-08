@@ -82,7 +82,7 @@ private func radiansToHue(radians: CGFloat) -> CGFloat {
 }
 
 private class BrightnessBar: UIView {
-  var color: (CGFloat, CGFloat, CGFloat) = (1.0, 1.0, 1.0) {
+  var color: (CGFloat, CGFloat, CGFloat) = (0.0, 0.0, 1.0) {
     didSet {
       setNeedsDisplay()
     }
@@ -123,13 +123,13 @@ private class BrightnessBar: UIView {
 }
 
 private class WheelView: UIView {
-  var wheelRadius: CGFloat = 0 {
+  private var wheelRadius: CGFloat = 0 {
     didSet {
       setNeedsDisplay()
     }
   }
   
-  var wheelCenter: CGPoint = CGPointMake(0, 0) {
+  private var wheelCenter: CGPoint = CGPointMake(0, 0) {
     didSet {
       setNeedsDisplay()
     }
@@ -137,11 +137,13 @@ private class WheelView: UIView {
 
   var didChangeWheelColor: (((CGFloat, CGFloat, CGFloat)) -> Void)?
   
-  var wheelColor: (CGFloat, CGFloat, CGFloat) = (1.0, 1.0, 1.0) {
+  private var wheelColor: (CGFloat, CGFloat, CGFloat) = (0.0, 0.0, 1.0) {
     didSet {
       didChangeWheelColor?(wheelColor)
     }
   }
+  
+  private let crossImageView = UIImageView(image: UIImage(named: "cross"))
   
   override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
     guard let touch = touches.first else {
@@ -168,6 +170,7 @@ private class WheelView: UIView {
     }
     
     wheelColor = (color.0, color.1, brightness)
+    crossImageView.center = point
   }
 
   private func color(atPoint point: CGPoint) -> (CGFloat, CGFloat, CGFloat)? {
@@ -197,6 +200,11 @@ private class WheelView: UIView {
     
     wheelRadius = CGRectGetWidth(bounds) / 2.0
     wheelCenter = CGPointMake(CGRectGetMidX(bounds), CGRectGetMidY(bounds))
+    
+    if crossImageView.superview == nil {
+      addSubview(crossImageView)
+      crossImageView.center = wheelCenter
+    }
   }
   
   override func drawRect(rect: CGRect) {
