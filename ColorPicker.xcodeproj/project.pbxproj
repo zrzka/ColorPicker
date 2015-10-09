@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF2056131BC6D51F00B0F765 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2056121BC6D51F00B0F765 /* cross@2x.png */; settings = {ASSET_TAGS = (); }; };
 		BFDFC2711BC2D7370094F858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDFC2701BC2D7370094F858 /* AppDelegate.swift */; };
 		BFDFC2731BC2D7370094F858 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDFC2721BC2D7370094F858 /* PickerViewController.swift */; };
 		BFDFC2761BC2D7370094F858 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDFC2741BC2D7370094F858 /* Main.storyboard */; };
@@ -17,7 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BF2056121BC6D51F00B0F765 /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
 		BFDFC26D1BC2D7370094F858 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDFC2701BC2D7370094F858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFDFC2721BC2D7370094F858 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +56,6 @@
 		BFDFC26F1BC2D7370094F858 /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
-				BF2056121BC6D51F00B0F765 /* cross@2x.png */,
 				BFDFC2701BC2D7370094F858 /* AppDelegate.swift */,
 				BFDFC2721BC2D7370094F858 /* PickerViewController.swift */,
 				BFDFC2901BC2D7AF0094F858 /* ColorPicker.swift */,
@@ -131,7 +128,6 @@
 				BFDFC27B1BC2D7370094F858 /* LaunchScreen.storyboard in Resources */,
 				BFDFC2781BC2D7370094F858 /* Assets.xcassets in Resources */,
 				BFDFC2761BC2D7370094F858 /* Main.storyboard in Resources */,
-				BF2056131BC6D51F00B0F765 /* cross@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
